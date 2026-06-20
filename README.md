@@ -39,3 +39,6 @@ own or are explicitly authorized to test.
 
 Status: v1 , the method, the runnable check, the report, and the lead magnet. Next: a per-tenant
 governance proxy (the productized remediation) and per-tenant cost/quality observability.
+
+## License
+MIT , see [LICENSE](LICENSE). Run the cache check only against systems you own or are authorized to test.
