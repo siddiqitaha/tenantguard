@@ -14,6 +14,18 @@ attacker who is simply *another tenant on your platform* can **reconstruct anoth
 with up to 99% accuracy, using nothing but response timing.** No breach of your database. No access
 to the other firm's account. Just timing.
 
+```mermaid
+sequenceDiagram
+    participant A as Firm A
+    participant S as Your AI (shared prefix cache)
+    participant B as Firm B (attacker)
+    A->>S: "Acme merger, confidential terms: ..."
+    Note over S: caches the prefix
+    B->>S: guess "Acme merger, confidential terms: ..."
+    S-->>B: fast reply (cache HIT)
+    Note over B: fast = the guess was right<br/>Firm A's matter, reconstructed from timing
+```
+
 For a legal product, that is not a bug. That is a privilege breach waiting to happen, and the firm
 whose matter leaked will treat it as one.
 
